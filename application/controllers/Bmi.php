@@ -76,4 +76,23 @@ class Bmi extends CI_Controller {
         $this->load->view('bmi/index', $data);
         $this->load->view('footer');
 	}
+
+    public function list(){
+        $this->load->model('Bmi_pasien');// load model
+        $data['bmi_pasien']=$this->Bmi_pasien->getAll();// query
+
+        $this->load->view('header');
+        $this->load->view('bmi/list',$data);
+        $this->load->view('footer');
+    }    
+
+    public function view($id){
+        $this->load->model('Bmi_pasien');
+        $data['bmi_pasien']=$this->Bmi_pasien->findById($id);
+
+        $this->load->view('header');
+        $this->load->view('bmi/view',$data);
+        $this->load->view('footer');
+    }
+
 }
