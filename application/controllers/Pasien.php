@@ -36,4 +36,24 @@ class Pasien extends CI_Controller {
         $this->load->view('pasien/index', $data);
         $this->load->view('footer');
 	}
+
+    public function list(){
+        $this->load->model('pasien_model');// load model
+        $data['pasien']=$this->pasien_model->getAll();// query
+
+        $this->load->view('header');
+        $this->load->view('pasien/list',$data);
+        $this->load->view('footer');
+    }    
+
+    public function view($id){
+        $this->load->model('pasien_model');
+        $data['pasien']=$this->pasien_model->findById($id);
+
+        $this->load->view('header');
+        $this->load->view('pasien/view',$data);
+        $this->load->view('footer');
+    }
+
+
 }
