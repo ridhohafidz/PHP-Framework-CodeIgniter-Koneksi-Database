@@ -77,6 +77,16 @@ class Bmi extends CI_Controller {
         $this->load->view('footer');
 	}
 
+    public  function periksa(){
+        $data['tanggal']=date('Y-m-d');
+        $this->load->model('pasien_model');
+        $data['list_pasien']=$this->pasien_model->getAll()->result();
+
+        $this->load->view('header');
+        $this->load->view('bmi/periksa', $data);
+        $this->load->view('footer');        
+    }
+
     public function list(){
         $this->load->model('Bmi_pasien');// load model
         $data['bmi_pasien']=$this->Bmi_pasien->getAll();// query
@@ -94,5 +104,22 @@ class Bmi extends CI_Controller {
         $this->load->view('bmi/view',$data);
         $this->load->view('footer');
     }
+
+    public function simpan(){
+        $data_periksa['tanggal']=$this->input->post('tanggal');//1
+        $data_periksa['pasien_id']=$this->input->post('pasien_id');//2
+        $data_periksa['berat']=$this->input->post('berat');//3
+        $data_periksa['tinggi']=$this->input->post('tinggi'); //4                       
+
+        $this->load->model('bmipasien_model','bmi');
+        $data_periksa = $this->bmi->save($data_periksa);
+
+        $data['data_periksa']=$data_periksa;   
+        $this->load->model('pasien_model','pasien');
+        $data['pasien']=$this->pasien->findById($data_periksa->pasien_id);     
+        $this->load->view('header');
+        $this->load->view('bmi/view', $data);
+        $this->load->view('footer');                
+    }    
 
 }

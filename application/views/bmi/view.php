@@ -1,4 +1,4 @@
-<h2>Data Pasien #ID : <?=$bmi_pasien->id?></h2>
+<!-- <h2>Data Pasien #ID : <?=$bmi_pasien->id?></h2>
 
 <div>
     <table class="table table-striped">
@@ -17,4 +17,16 @@
         </tr>
         <tr><td>Pasien ID</td><td>:</td><td><?=$bmi_pasien->pasien_id?></td></tr>        
     </table>
-</div> 
+</div>  -->
+
+<h3>Data Periksa Pasien</h3>
+#IDPeriksa :  <?=$data_periksa->id?>
+<br/>
+Tanggal : <?=$data_periksa->tanggal?>
+<br/>ID Pasien : <?=$data_periksa->pasien_id?>
+<br/>Berat Badan : <?=$data_periksa->berat?>
+<br/>Tinggi Badan : <?=$data_periksa->tinggi?>
+<br/>BMI : <?=$data_periksa->bmi?>
+<br/>Status BMI : <?=$data_periksa->status_bmi?>
+<br/>Nama Pasien : <?=$pasien->nama?>
+<br/>Tanggal Lahir Pasien <?=$pasien->tmp_lahir?>
