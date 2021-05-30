@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 06, 2021 at 07:43 AM
+-- Generation Time: May 30, 2021 at 01:26 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -45,7 +45,17 @@ CREATE TABLE `bmi_pasien` (
 INSERT INTO `bmi_pasien` (`id`, `tanggal`, `berat`, `tinggi`, `bmi`, `status_bmi`, `catatan`, `pasien_id`) VALUES
 (1, '2021-05-06', 50.2, 149.2, 0, '', 'cek rutin', 1),
 (2, '2021-05-06', 90.3, 160.2, 0, '', 'cek rutin', 2),
-(3, '2021-05-06', 80.2, 172.4, 0, '', 'cek rutin', 3);
+(3, '2021-05-06', 80.2, 172.4, 0, '', 'cek rutin', 3),
+(6, '2021-05-30', 70.24, 170, NULL, NULL, NULL, 1),
+(7, '2021-05-30', 77.9, 175, NULL, NULL, NULL, 1),
+(13, '2021-05-30', 63.9, 170, 22.110726643599, 'Normal (ideal)', NULL, 1),
+(14, '2021-05-30', 79.2, 175, 25.861224489796, 'Kelebihan Berat Badan', NULL, 2),
+(24, '2021-05-30', 79.2, 175, 25.861224489796, 'Kelebihan Berat Badan', NULL, 2),
+(25, '2021-05-30', 56.5, 170, 19.550173010381, 'Normal (ideal)', NULL, 2),
+(26, '2021-05-30', 65.8, 172, 22.24175229854, 'Normal (ideal)', NULL, 3),
+(27, '2021-05-30', 55.6, 168, 19.699546485261, 'Normal (ideal)', NULL, 1),
+(28, '2021-05-30', 56.5, 162, 21.528730376467, 'Normal (ideal)', NULL, 3),
+(29, '2021-05-30', 40.8, 162, 15.546410608139, 'Kekurangan berat badan', NULL, 3);
 
 -- --------------------------------------------------------
 
@@ -98,7 +108,7 @@ ALTER TABLE `pasien`
 -- AUTO_INCREMENT for table `bmi_pasien`
 --
 ALTER TABLE `bmi_pasien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `pasien`
